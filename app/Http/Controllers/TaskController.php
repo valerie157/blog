@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
+use App\Models\Task; // Adjusted namespace import
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
     public function index()
-{
-    $tasks = Task::all(); 
-    return view('dashboard', ['tasks' => $tasks]);
-}
+    {
+        $tasks = Task::all(); // Corrected model usage
+        return view('dashboard', ['tasks' => $tasks]);
+    }
 
     public function create()
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Deal; // Import the Deal model
 
 class DashboardController extends Controller
 {
@@ -13,7 +14,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $deals = Deal::all(); // Retrieve all deals from the database
+        return view('dashboard', ['deals' => $deals]); // Pass deals to the dashboard view
     }
 }
+
 

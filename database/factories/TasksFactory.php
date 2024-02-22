@@ -22,4 +22,9 @@ class TasksFactory extends Factory
             'completed'=>$this->faker->boolean,
         ];
     }
+    public function run()
+    {
+        // Seed tasks table
+        Task::factory()->count(10)->create();
+    }
 }

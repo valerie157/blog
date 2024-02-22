@@ -14,4 +14,12 @@ class Task extends Model
         'description',
         'completed',
     ];
+
+    /**
+     * Get the leads associated with the task.
+     */
+    public function leads()
+    {
+        return $this->hasMany(Lead::class);
+    }
 }
