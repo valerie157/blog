@@ -25,6 +25,8 @@ Route::resource('organizations  ', OrganizationController::class);
 Route::resource('task', TasksController::class);
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
